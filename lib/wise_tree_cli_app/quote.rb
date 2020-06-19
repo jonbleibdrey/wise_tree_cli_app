@@ -27,22 +27,11 @@ class Quote
     end
     
     def self.first_name(name)
-        # @@first_names = []
         quote_array = @@all.select do |object|
-        # quote_array = @@all.find do |object|
         object.name.split(" ").first.upcase == name.upcase
-            # @@first_names << name.upcase
         end
-         puts""
         quote_array.first.name + ": " + quote_array.first.text 
-        puts""
-        # quote_array.name + ": " + quote_array.text
-        # binding.pry
     end
-
-    # def first_names
-    #     @@first_names
-    # end
     
     def self.last_name(name)
        quote_array = @@all.select do |object|
@@ -65,30 +54,27 @@ class Quote
      end
 
      
+     
      def self.last_letter(letter)
         @@all.select do |object|
-        object.name.split(" ").last[0] == letter.upcase
+            object.name.split(" ").last[0] == letter.upcase
         end
-            
+        
      end
-
+     
      def reject_name
         @@all.reject{}
-     end
-
-#     def self.find_by_name(name)
-#      @@all.find{|person| person.name == name}
-#    end
-
-
+    end
+    
+    
     def self.all
         @@all
     end
-
- 
-
+    
+    
+    
     def save
         @@all << self
     end
-
+   
 end 

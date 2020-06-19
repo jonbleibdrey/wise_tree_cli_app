@@ -85,7 +85,6 @@ class Cli
         elsif user_input.to_i == 2
             puts" Type first name of historical figure"   
             user_input = gets.strip
-            puts""
             if Quote.all.any?{|quote| quote.name.split(" ").first == user_input.capitalize}
             firstname = Quote.first_name(user_input)
             puts ""
@@ -183,7 +182,6 @@ class Cli
             user_input = gets.strip
             if user_input == "0"
             main_menu
-        
             else 
             puts "~~~~ Wrong answer my child ~~~~"
             puts  "if you want to go back to the main menu type: anything"
